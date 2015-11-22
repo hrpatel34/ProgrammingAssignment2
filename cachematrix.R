@@ -26,10 +26,12 @@ cacheSolve <- function(x, ...) {
         if(!is.null(invx)) {
 		##checking if data is not chnaged after invered cached
 		##first check - checking if both matrix are square matrix of same size
-		if(nrow(invx) == ncol(invx) & nrow(invx) = nrow(data)){
+		if(nrow(invx) == ncol(invx) & nrow(invx) == nrow(data)){
 			##second check
-			temp <- invx[,1] %*% data[1,]
-			if(temp[1,1] == 1){
+			temp <- invx %*% data
+			total=0
+			for (i in 1:ncol(invx) {total<- total + temp[i,i]}
+			if(total == ncol(invx)){
                 		message("getting cached data")
                 		return(invx)
 			}else{
